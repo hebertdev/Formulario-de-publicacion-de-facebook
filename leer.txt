@@ -1,0 +1,10 @@
+Hola que tal , en este tutorial aprenderemos cosas básicas de javascript 
+haciendo el formulario de publicación que tiene facebook ,
+pre-visualizar imagen y mas . espero que les guste.
+
+Mis redes sociales:
+https://www.instagram.com/hebertdev1
+https://github.com/hebertdev1
+
+denle una estrellita al repositorio de este proyecto <3
+

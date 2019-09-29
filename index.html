@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>facebook</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		header{
+			position: fixed;
+			width: 100%;
+			height: 42px;
+			background: #4267b2;
+		}
+		.container-all{
+			width: 100%;
+			height: 100vh;
+			background: #e9ebee;
+			display: flex;
+			justify-content: center;
+			/*align-items: center;*/
+		}
+		.list-post{
+			width: 500px;
+			/*background: white;*/
+			height: 60vh;
+			margin-top: 50px;
+		}
+
+		form{
+			width: 100%;
+			height: 100px;
+			background: white;
+			background: white;
+		    border: 1px solid rgba(0,0,0,0.1);
+		    border-radius: 6px;
+		    overflow: hidden;
+		} 
+
+		
+		figure{
+			min-width: 45px;
+			min-height: 45px;
+			max-width: 45px;
+			max-height: 45px;
+			border: 1px solid rgba(0,0,0,0.1);
+			display: flex;
+			justify-content: center;
+			align-items: baseline;
+			border-radius: 100%;
+			overflow: hidden;
+		}
+
+		figure img{
+			width: 100%;
+
+		}
+
+		.container-post-create{
+			display: flex;
+			align-items: center;
+			padding: 10px;
+			border-bottom: 1px solid rgba(0,0,0,0.05);
+		}
+
+		.container-input{
+			width: 100%;
+		}
+
+		.container-input input{
+			padding: 10px;
+			border: none;
+			font-size: 20px;
+			width: 100%;
+			box-sizing: border-box;
+			color: #1d2129;
+		}
+		.container-input input:focus{
+			outline: none;
+			border: none;
+		}
+		
+		.container-header-create{
+			width: 100%;
+		    height: 30px;
+		    background: #f5f6f7;
+		    border-bottom: 1px solid rgba(0,0,0,0.1);
+		    display: flex;
+		    align-items: center;
+		    color: #3e2a2a;
+		    font-family: arial;
+		    font-size: 12px;
+		    justify-content: space-between;
+		}
+		.container-header-create span{
+			margin:0 10px;
+		} 
+
+		.overlay{
+			position: fixed;
+			width: 100%;
+			height: 100vh;
+			top: 0;
+			left: 0;
+			background: rgba(0,0,0,0.4);
+			display: none;
+		}
+
+		.container-input-file{
+			width: 120px;
+			height: 30px;
+			position: relative;
+			background: transparent;
+			overflow: hidden;
+			border-radius: 15px;
+			border: 1px solid rgba(0,0,0,0.05);
+
+		}
+
+		.fileimg{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			z-index: 2;
+		}
+		
+		.input-txt{
+			display: flex;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #e4f0d5;
+			padding: 0 10px;
+			align-items: center;
+			font-family: arial;
+    		font-size: 14px;
+
+		}
+		.img-photo{
+			width: 22px;
+			height: 22px;
+			overflow: hidden;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: ;
+			margin-right: 3px
+		}
+		.txt-photo img{
+			width: 100%;
+
+		}
+
+		.btn-submit{
+			background: #4267b2;
+		    padding: 3px;
+		    border: none;
+		    border-radius: 3px;
+		    color: white;
+		    width: 100%;
+		    height: 26px;
+		    cursor: pointer;
+		}
+		
+		.container-img-preview{
+			max-width: 90px;
+		    max-height: 90px;
+		    overflow: hidden;
+		    border-radius: 5px;
+		    display: flex;
+		    justify-content: center;
+		    align-items: baseline;
+		}
+
+		.container-img-preview img{
+			max-width: 90px;
+		    width: 90px;
+		    max-height: 90px;
+		    height: auto;
+		}
+
+		/*estilos que se agregan activando la funcion */
+
+		.entraroverlay{
+			display: block;
+		}
+		
+		.entrarform{
+			max-height: 296px;
+		    position: relative;
+		    z-index: 3;
+		    height: auto;
+		}
+
+		
+		
+
+		
+	</style>
+</head>
+<body>
+	<header>
+		
+	</header>
+	<div class="container-all">
+		<div class="list-post">
+
+
+
+			<form action="" id="formulariopost">
+				<div class="container-header-create">
+					<span>Crear publicaciòn</span>
+					<span style="font-weight: 600;cursor: pointer;display: none;" id="cerraroverlay">x</span>
+				</div>
+				<div class="container-post-create">
+					<figure>
+						<img src="https://instagram.faqp2-1.fna.fbcdn.net/vp/4114e82327759c7eeb69b85c6976a81f/5E22A8C6/t51.2885-15/e35/67365083_732873730478935_7547145494827703098_n.jpg?_nc_ht=instagram.faqp2-1.fna.fbcdn.net&_nc_cat=107" alt="">
+					</figure>
+					<div class="container-input">
+						<input id="inputtxt" type="text" placeholder="¿Que estas pensando , Hebert?" autocomplete="off">
+					</div>
+				</div>
+				<div style="background: white;padding: 10px 10px 0px 10px;">
+					<div class="container-img-preview">
+						<img src="" alt="" id="previewimage">
+					</div>
+				</div>
+				<div style="background: white;padding: 10px;">
+					<div class="container-input-file">
+						<div class="input-txt">
+							<div class="img-photo">
+								<img src="img/icon-image.png" alt="">
+							</div>
+							<span class="txt-photo">photo/video</span>
+						</div>
+						<input type="file" class="fileimg" id="fileimg" onchange="previsualizarImagen()">
+					</div>
+				</div>
+				<div style="background: #f5f6f7;padding: 10px 10px 10px 10px;">
+					<button class="btn-submit">Publicar</button>
+				</div>
+			
+			</form>
+			<div class="overlay" id="overlay"></div>
+
+
+
+
+			
+		</div>
+	</div>
+
+
+	<script>
+
+		let $inputtxt = document.getElementById('inputtxt');
+		let $formpost = document.querySelector('#formulariopost');
+		var $overlay = document.getElementById('overlay');
+		let $btnclose = document.getElementById('cerraroverlay')
+
+		$inputtxt.addEventListener('focus' , entrarform)
+
+		function entrarform(){
+			$formpost.classList.add('entrarform')
+			$overlay.classList.add('entraroverlay')
+			$btnclose.style.display = 'block';
+		}
+
+		$overlay.addEventListener('click' , removeform)
+		$btnclose.addEventListener('click' , removeform)
+
+		function removeform(){
+			$formpost.classList.remove('entrarform')
+			$overlay.classList.remove('entraroverlay')
+			$btnclose.style.display = 'none';
+
+		}
+
+
+		// previsualiar imagen
+
+		function previsualizarImagen(){
+			let inputfile = document.getElementById('fileimg').files[0] ;
+			let imgpreview = document.querySelector('img[id=previewimage]');
+			let $readfile = new FileReader();
+
+			if(inputfile){
+				$readfile.readAsDataURL(inputfile)
+				$readfile.onloadend=function(){
+					imgpreview.src=$readfile.result;
+				}
+			}else{
+				imgpreview.src = '';
+			}
+		}
+
+
+
+		
+	</script>
+</body>
+</html>
